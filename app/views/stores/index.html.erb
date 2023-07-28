@@ -1,0 +1,8 @@
+<h1>Store index</h1>
+
+
+<% @stores.each do |store|%>
+  <p>name:<%= link_to store.name, store_path(store) %></p>
+  <p>review:<%= store.rating %></p>
+  <%= button_to "Destroy", store_path(store), method: :delete%>
+<% end %>
