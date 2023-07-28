@@ -4,5 +4,5 @@
 <% @stores.each do |store|%>
   <p>name:<%= link_to store.name, store_path(store) %></p>
   <p>review:<%= store.rating %></p>
-  <%= button_to "Destroy", store_path(store), method: :delete%>
+  <%= link_to "Destroy", store_path(store), method: :delete, data: { turbo_confirm: "Are you sure?" }, form: { "data-turbo-method": :delete } %>
 <% end %>
